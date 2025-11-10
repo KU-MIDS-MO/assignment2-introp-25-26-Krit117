@@ -1,6 +1,8 @@
 def breakdown_time(seconds):
-    if not isinstance (seconds,int):
-        if isinstance(seconds, float) and seconds.is_integer():
+    if not isinstance (seconds,(int,float)):
+        return -1 
+    if isinstance(seconds, float): 
+        if seconds.is_integer():
             seconds = int(seconds)
         else:
             return -1
